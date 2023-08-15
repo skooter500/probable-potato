@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://behaviors/Avoidance.gd" type="Script" id=1]
 [ext_resource path="res://behaviors/Boid.gd" type="Script" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://behaviors/PlayerSteering.gd" type="Script" id=15]
 [ext_resource path="res://behaviors/CreatureController.gd" type="Script" id=16]
 [ext_resource path="res://behaviors/NoiseWander.gd" type="Script" id=17]
-[ext_resource path="res://sounds/whale_talk.mp3" type="AudioStream" id=18]
 [ext_resource path="res://shaders/color_shader.tres" type="Material" id=19]
 [ext_resource path="res://addons/godot-xr-tools/player/player_body.tscn" type="PackedScene" id=20]
 [ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" type="PackedScene" id=21]
@@ -149,14 +148,14 @@ surfaces/0 = {
 [sub_resource type="CubeMesh" id=15]
 size = Vector3( 10, 10, 10 )
 
+[sub_resource type="CapsuleShape" id=14]
+radius = 0.2
+height = 1.4
+
 [sub_resource type="Environment" id=13]
 background_mode = 1
 ambient_light_color = Color( 0.392157, 0.392157, 0.392157, 1 )
 ambient_light_energy = 2.0
-
-[sub_resource type="CapsuleShape" id=14]
-radius = 0.2
-height = 1.4
 
 [sub_resource type="PlaneShape" id=17]
 
@@ -183,7 +182,7 @@ radius = 3.0
 script = ExtResource( 10 )
 
 [node name="Environment" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56266, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6866, 0 )
 
 [node name="untitled1" type="Spatial" parent="Environment"]
 transform = Transform( 100, 0, 0, 0, 50, 0, 0, 0, 100, 0.298508, -1.2155, -3.73861 )
@@ -281,6 +280,7 @@ transform = Transform( 3.41289, 0, 2.08618, 0, 4, 0, -2.08618, 0, 3.41289, -94.7
 transform = Transform( 3.00865, 0, -2.63591, 0, 4, 0, 2.63591, 0, 3.00865, -102.114, 3.72878, 82.927 )
 
 [node name="Alien" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0709, 0, -3.78637 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2733, 468.535, -2.97619 )
@@ -288,9 +288,23 @@ mesh = SubResource( 15 )
 material/0 = ExtResource( 19 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 21.6425, 33.382 )
 script = ExtResource( 11 )
 speed = 10.0
+
+[node name="FPController" parent="Player" instance=ExtResource( 32 )]
+
+[node name="Listener" type="Listener" parent="Player/FPController/ARVRCamera" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 10.0629, 33.382 )
+
+[node name="LeftHand" parent="Player/FPController/LeftHandController" index="0" instance=ExtResource( 21 )]
+
+[node name="RightHand" parent="Player/FPController/RightHandController" index="0" instance=ExtResource( 22 )]
+
+[node name="PlayerBody" parent="Player/FPController" instance=ExtResource( 20 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Player/FPController/PlayerBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
+shape = SubResource( 14 )
 
 [node name="Camera" type="Camera" parent="Player"]
 environment = SubResource( 13 )
@@ -300,21 +314,6 @@ far = 10000.0
 script = ExtResource( 3 )
 boid_player_path = NodePath("../../../camera follower")
 boid_path = NodePath("../../../creature/boid")
-
-[node name="FPController" parent="Player/Camera" instance=ExtResource( 32 )]
-
-[node name="Listener" type="Listener" parent="Player/Camera/FPController/ARVRCamera" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 10.0629, 33.382 )
-
-[node name="LeftHand" parent="Player/Camera/FPController/LeftHandController" index="0" instance=ExtResource( 21 )]
-
-[node name="RightHand" parent="Player/Camera/FPController/RightHandController" index="0" instance=ExtResource( 22 )]
-
-[node name="PlayerBody" parent="Player/Camera/FPController" instance=ExtResource( 20 )]
-
-[node name="CollisionShape" type="CollisionShape" parent="Player/Camera/FPController/PlayerBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
-shape = SubResource( 14 )
 
 [node name="SceneSwitcher" parent="." instance=ExtResource( 26 )]
 
@@ -388,11 +387,6 @@ script = ExtResource( 15 )
 weight = 15.0
 draw_gizmos = false
 enabled = false
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="creature/boid"]
-stream = ExtResource( 18 )
-unit_db = 31.15
-autoplay = true
 
 [node name="body1" type="KinematicBody" parent="creature"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9 )
@@ -486,6 +480,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98026, 0, 1.43593 )
 [connection signal="body_entered" from="creature/tail/Pod" to="creature/Controller" method="_on_Pod_body_entered"]
 
 [editable path="Alien"]
-[editable path="Player/Camera/FPController"]
+[editable path="Player/FPController"]
 [editable path="Alien2"]
 [editable path="Whale"]
