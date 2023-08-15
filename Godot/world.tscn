@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://behaviors/Avoidance.gd" type="Script" id=1]
 [ext_resource path="res://behaviors/Boid.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://behaviors/PlayerSteering.gd" type="Script" id=15]
 [ext_resource path="res://behaviors/CreatureController.gd" type="Script" id=16]
 [ext_resource path="res://behaviors/NoiseWander.gd" type="Script" id=17]
+[ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=18]
 [ext_resource path="res://shaders/color_shader.tres" type="Material" id=19]
 [ext_resource path="res://addons/godot-xr-tools/player/player_body.tscn" type="PackedScene" id=20]
 [ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" type="PackedScene" id=21]
@@ -287,24 +288,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2733, 468.535, -2.97619 )
 mesh = SubResource( 15 )
 material/0 = ExtResource( 19 )
 
+[node name="FPController" parent="." instance=ExtResource( 32 )]
+
+[node name="Listener" type="Listener" parent="FPController/ARVRCamera" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 10.0629, 33.382 )
+
+[node name="LeftHand" parent="FPController/LeftHandController" index="0" instance=ExtResource( 21 )]
+
+[node name="FunctionTeleport" parent="FPController/LeftHandController" index="1" instance=ExtResource( 18 )]
+
+[node name="RightHand" parent="FPController/RightHandController" index="0" instance=ExtResource( 22 )]
+
+[node name="PlayerBody" parent="FPController" instance=ExtResource( 20 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="FPController/PlayerBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
+shape = SubResource( 14 )
+
 [node name="Player" type="KinematicBody" parent="."]
 script = ExtResource( 11 )
 speed = 10.0
-
-[node name="FPController" parent="Player" instance=ExtResource( 32 )]
-
-[node name="Listener" type="Listener" parent="Player/FPController/ARVRCamera" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 10.0629, 33.382 )
-
-[node name="LeftHand" parent="Player/FPController/LeftHandController" index="0" instance=ExtResource( 21 )]
-
-[node name="RightHand" parent="Player/FPController/RightHandController" index="0" instance=ExtResource( 22 )]
-
-[node name="PlayerBody" parent="Player/FPController" instance=ExtResource( 20 )]
-
-[node name="CollisionShape" type="CollisionShape" parent="Player/FPController/PlayerBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
-shape = SubResource( 14 )
 
 [node name="Camera" type="Camera" parent="Player"]
 environment = SubResource( 13 )
@@ -480,6 +483,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98026, 0, 1.43593 )
 [connection signal="body_entered" from="creature/tail/Pod" to="creature/Controller" method="_on_Pod_body_entered"]
 
 [editable path="Alien"]
-[editable path="Player/FPController"]
+[editable path="FPController"]
 [editable path="Alien2"]
 [editable path="Whale"]
