@@ -8,6 +8,9 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var anim = $AnimationPlayer.get_animation("Swim")
+	anim.set_loop(true)
+	$AnimationPlayer.play("Swim")
 	pass # Replace with function body.
 
 
