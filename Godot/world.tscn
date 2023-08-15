@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://behaviors/Avoidance.gd" type="Script" id=1]
 [ext_resource path="res://behaviors/Boid.gd" type="Script" id=2]
@@ -149,8 +149,6 @@ surfaces/0 = {
 [sub_resource type="CubeMesh" id=15]
 size = Vector3( 10, 10, 10 )
 
-[sub_resource type="SphereShape" id=12]
-
 [sub_resource type="Environment" id=13]
 background_mode = 1
 ambient_light_color = Color( 0.392157, 0.392157, 0.392157, 1 )
@@ -290,12 +288,9 @@ mesh = SubResource( 15 )
 material/0 = ExtResource( 19 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 11.8629, 33.382 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 21.6425, 33.382 )
 script = ExtResource( 11 )
 speed = 10.0
-
-[node name="CollisionShape" type="CollisionShape" parent="Player"]
-shape = SubResource( 12 )
 
 [node name="Camera" type="Camera" parent="Player"]
 environment = SubResource( 13 )
@@ -307,7 +302,6 @@ boid_player_path = NodePath("../../../camera follower")
 boid_path = NodePath("../../../creature/boid")
 
 [node name="FPController" parent="Player/Camera" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13334, -11.8629, -33.382 )
 
 [node name="Listener" type="Listener" parent="Player/Camera/FPController/ARVRCamera" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334, 10.0629, 33.382 )

@@ -567,7 +567,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GodotBoids"
-run/main_scene="res://behaviors/take_control.tscn"
+run/main_scene="res://world.tscn"
 config/icon="res://behaviors/icon.png"
 
 [autoload]
