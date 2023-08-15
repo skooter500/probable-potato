@@ -1,4 +1,4 @@
-class_name Avoidance extends SteeringBehavior
+tool class_name Avoidance extends SteeringBehavior
 	
 # Declare member variables here. Examples:
 # var a = 2

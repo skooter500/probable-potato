@@ -1,4 +1,4 @@
-class_name NoiseWander extends SteeringBehavior
+tool class_name NoiseWander extends SteeringBehavior
 
 export var frequency = 0.3
 export var radius = 10.0
@@ -25,6 +25,7 @@ func _ready():
 	
 func _process(delta):
 	if draw_gizmos:
+		boid = get_parent()
 		var cent = boid.global_transform.xform(Vector3.BACK * distance)
 		DebugDraw.draw_sphere(cent, radius, Color.hotpink)
 		DebugDraw.draw_line(boid.global_transform.origin, cent, Color.hotpink)
