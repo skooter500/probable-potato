@@ -96,7 +96,7 @@ surfaces/0 = {
 "vertex_count": 1502
 }
 
-[sub_resource type="ArrayMesh" id=37]
+[sub_resource type="ArrayMesh" id=42]
 resource_name = "Tree_Blob_1_CUBezierCurve026"
 surfaces/0 = {
 "aabb": AABB( -1.93134, -0.00537037, -1.93134, 3.86267, 5.87559, 3.86267 ),
@@ -114,10 +114,10 @@ surfaces/0 = {
 [sub_resource type="MultiMesh" id=28]
 transform_format = 1
 instance_count = 5
-mesh = SubResource( 37 )
+mesh = SubResource( 42 )
 transform_array = PoolVector3Array( -1.99776, -0.0301834, 0, -0.0301832, 1.99775, 0.00654573, -9.88854e-05, 0.00654498, -1.99798, -11.107, 0, -18.7547, 0.000497192, 0.0209121, -1.59055, 0.0378049, 1.5901, 0.0209181, 1.59023, -0.0378082, 0, 4.31373, 0, 8.47707, -1.67226, -0.0243481, 0, -0.0243467, 1.67216, 0.0181843, -0.000264736, 0.0181824, -1.67234, -15.2684, 0, -6.97461, -0.000742672, 0.0583996, -2.34714, -0.0298463, 2.34695, 0.0584044, 2.34768, 0.0298556, 0, -17.4905, 0, 18.0774, -1.60528, 0.0351053, 0, 0.0351021, 1.60513, 0.0215706, 0.000471606, 0.0215654, -1.60552, -7.89348, 0, 3.97121 )
 
-[sub_resource type="ArrayMesh" id=38]
+[sub_resource type="ArrayMesh" id=43]
 resource_name = "Tree_Blob_2_CUBezierCurve025"
 surfaces/0 = {
 "aabb": AABB( -1.82174, -0.00414946, -1.89734, 3.68688, 4.60915, 3.86267 ),
@@ -135,7 +135,7 @@ surfaces/0 = {
 [sub_resource type="MultiMesh" id=30]
 transform_format = 1
 instance_count = 4
-mesh = SubResource( 38 )
+mesh = SubResource( 43 )
 transform_array = PoolVector3Array( -1.81577, 0, -2.17057, 0, 2.82991, 0, 2.17057, 0, -1.81577, -12.215, 0, -35.2674, -1.01282, 0, 1.47646, 0, 1.79046, 0, -1.47646, 0, -1.01282, -18.7378, 0, -22.0429, -1.20697, 0, 0.220227, 0, 1.2269, 0, -0.220227, 0, -1.20697, -16.4755, 0, -17.7135, -0.832323, 0, 2.43967, 0, 2.57774, 0, -2.43967, 0, -0.832323, 5.90808, 0, -43.9774 )
 
 [sub_resource type="PlaneMesh" id=26]

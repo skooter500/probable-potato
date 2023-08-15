@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://behaviors/Boid.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" type="PackedScene" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://Models/alien_trees/Spaceship_BarbaraTheBee.gltf" type="PackedScene" id=8]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=9]
 [ext_resource path="res://asset_packs/Alien.glb" type="PackedScene" id=10]
+[ext_resource path="res://Models/alien_trees/Grass_2.gltf" type="PackedScene" id=11]
 [ext_resource path="res://behaviors/NoiseWander.gd" type="Script" id=12]
+[ext_resource path="res://Models/alien_trees/GeodesicDome.gltf" type="PackedScene" id=13]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=14]
 [ext_resource path="res://addons/godot-xr-tools/player/player_body.tscn" type="PackedScene" id=26]
 [ext_resource path="res://materials/environment1.tres" type="Material" id=37]
@@ -96,5 +98,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52501, 0, 0 )
 [node name="Whale" parent="Boid" instance=ExtResource( 4 )]
 
 [node name="Alien" parent="Boid" instance=ExtResource( 10 )]
+
+[node name="Grass_2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7104, 3.43878, -8.39118 )
+
+[node name="GeodesicDome" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5853, 0, -16.3583 )
 
 [editable path="FPController"]
