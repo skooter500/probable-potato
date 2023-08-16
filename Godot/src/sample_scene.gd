@@ -12,6 +12,14 @@ var record_effect: AudioEffectRecord
 var recording: AudioStreamSample
 
 func _ready() -> void:
+	var devices = AudioServer.capture_get_device_list()
+	for i in range(devices.size()):
+		var device = devices[i]
+		if device == AudioServer.capture_get_device():
+			print(str(device))
+		else:
+			print(str(device) + " *")		
+	
 	record_bus_index = AudioServer.get_bus_index('Record')
 	# Only one effect on the bus, so can just assume index 0 for record effect
 	record_effect = AudioServer.get_bus_effect(record_bus_index, 0)

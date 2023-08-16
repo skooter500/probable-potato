@@ -4,6 +4,45 @@ var record_bus_index: int
 var record_effect: AudioEffectRecord
 var recording: AudioStreamSample
 
+const MIN_DB: int = 80
+
+var record_live_index: int
+var volume_samples: Array = []
+var frequency_samples: Dictionary = {}
+var spectrum_analyzer: AudioEffectSpectrumAnalyzerInstance
+
+var MAX_SAMPLES = 10
+
+export var sample_avg:float
+export var sample:float
+
+export var lerped_amplitude = 0.0
+
+func average_array(arr: Array) -> float:
+	var avg = 0.0
+	for i in range(arr.size()):
+		avg += arr[i]
+	avg /= arr.size()
+	return avg
+
+func update_amplitude():
+	sample = db2linear(AudioServer.get_bus_peak_volume_left_db(record_bus_index, 0))
+	volume_samples.push_front(sample)
+
+	print("Sample: " + str(sample))
+	# Use a while loop that way the user can adjust the number of samples at runtime
+	# and remove as many as needed when the value changes
+	while volume_samples.size() > MAX_SAMPLES:
+		volume_samples.pop_back()
+
+	sample_avg = average_array(volume_samples)
+	
+	var delta_time = get_process_delta_time()
+	lerped_amplitude = lerp(lerped_amplitude, sample_avg, delta_time)
+
+func _process(delta):	
+	update_amplitude()
+
 func _ready() -> void:
 	
 	record_bus_index = AudioServer.get_bus_index('Record')

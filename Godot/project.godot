@@ -567,7 +567,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Recovery"
-run/main_scene="res://world4.tscn"
+run/main_scene="res://audio1.tscn"
 config/icon="res://behaviors/icon.png"
 
 [audio]
