@@ -9,7 +9,6 @@ func draw_gizmos():
 	# DebugDraw.draw_grid(Vector3.ZERO, Vector3.RIGHT* size, Vector3.BACK * size, Vector2(sub_divisions, sub_divisions), Color.aquamarine)
 	# DebugDraw.draw_grid(Vector3.ZERO, Vector3.UP * size, Vector3.BACK * size, Vector2(sub_divisions, sub_divisions), Color.aquamarine)
 
-
 func _ready():
 	OS.set_current_screen(1)
 	var screen_size = OS.get_screen_size()

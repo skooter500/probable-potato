@@ -566,9 +566,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GodotBoids"
+config/name="Godot Recovery"
 run/main_scene="res://world4.tscn"
 config/icon="res://behaviors/icon.png"
+
+[audio]
+
+enable_audio_input=true
 
 [autoload]
 
@@ -593,6 +597,7 @@ singletons=[ "res://addons/godot-openxr/config/godot_openxr.gdnlib" ]
 
 ETC=false
 compression=false
+audio=false
 
 [gui]
 

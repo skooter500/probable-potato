@@ -1,50 +1,51 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=94 format=2]
 
-[ext_resource path="res://behaviors/Boid.gd" type="Script" id=1]
-[ext_resource path="res://addons/godot-openxr/config/OpenXRConfig.gdns" type="Script" id=2]
-[ext_resource path="res://asset_packs/Demon.gltf" type="PackedScene" id=3]
-[ext_resource path="res://WhaleControl.gd" type="Script" id=4]
-[ext_resource path="res://asset_packs/Fish.gltf" type="PackedScene" id=5]
+[ext_resource path="res://default_environment.tres" type="Environment" id=1]
+[ext_resource path="res://sounds/bloop_bleep.wav" type="AudioStream" id=2]
+[ext_resource path="res://sounds/psy_yawn.wav" type="AudioStream" id=3]
+[ext_resource path="res://behaviors/trail_width_curve.tres" type="Curve" id=4]
+[ext_resource path="res://behaviors/Constrain.gd" type="Script" id=5]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.gd" type="Script" id=6]
-[ext_resource path="res://asset_packs/Birb.gltf" type="PackedScene" id=7]
-[ext_resource path="res://Models/alien_trees/Spaceship_BarbaraTheBee.gltf" type="PackedScene" id=8]
-[ext_resource path="res://addons/godot-openxr/scenes/controller.gd" type="Script" id=9]
+[ext_resource path="res://addons/godot-openxr/scenes/controller.gd" type="Script" id=7]
+[ext_resource path="res://behaviors/OffsetPursue.gd" type="Script" id=8]
+[ext_resource path="res://behaviors/TrailRender.gd" type="Script" id=9]
 [ext_resource path="res://alien_controller.gd" type="Script" id=10]
-[ext_resource path="res://Models/alien_trees/Grass_2.gltf" type="PackedScene" id=11]
-[ext_resource path="res://behaviors/NoiseWander.gd" type="Script" id=12]
-[ext_resource path="res://Models/rocks/Atlas.material" type="Material" id=13]
-[ext_resource path="res://default_environment.tres" type="Environment" id=14]
-[ext_resource path="res://Models/alien_trees/Tree_Floating_3.gltf" type="PackedScene" id=15]
-[ext_resource path="res://Models/alien_trees/Tree_Blob_2.gltf" type="PackedScene" id=16]
-[ext_resource path="res://behaviors/trail_width_curve.tres" type="Curve" id=17]
-[ext_resource path="res://Models/alien_trees/Tree_Blob_3.gltf" type="PackedScene" id=18]
-[ext_resource path="res://Models/alien_trees/Tree_Floating_1.gltf" type="PackedScene" id=19]
-[ext_resource path="res://asset_packs/Bottom.material" type="Material" id=20]
-[ext_resource path="res://Models/alien_trees/Atlas.material" type="Material" id=21]
-[ext_resource path="res://Models/rocks/Rock_Large_3.gltf" type="PackedScene" id=22]
-[ext_resource path="res://asset_packs/White.material" type="Material" id=23]
-[ext_resource path="res://asset_packs/Stripe.material" type="Material" id=24]
-[ext_resource path="res://behaviors/FPController.gd" type="Script" id=25]
-[ext_resource path="res://asset_packs/Main.material" type="Material" id=26]
-[ext_resource path="res://Models/alien_trees/Tree_Light_2.gltf" type="PackedScene" id=27]
-[ext_resource path="res://asset_packs/Eyes.material" type="Material" id=28]
-[ext_resource path="res://Models/alien_trees/Tree_Lava_3.gltf" type="PackedScene" id=29]
-[ext_resource path="res://Models/alien_trees/Tree_Swirl_2.gltf" type="PackedScene" id=30]
-[ext_resource path="res://Models/alien_trees/Tree_Spikes_2.gltf" type="PackedScene" id=31]
+[ext_resource path="res://behaviors/root.gd" type="Script" id=11]
+[ext_resource path="res://behaviors/FPController.gd" type="Script" id=12]
+[ext_resource path="res://behaviors/NoiseWander.gd" type="Script" id=13]
+[ext_resource path="res://WhaleControl.gd" type="Script" id=14]
+[ext_resource path="res://behaviors/Boid.gd" type="Script" id=15]
+[ext_resource path="res://behaviors/Avoidance.gd" type="Script" id=16]
+[ext_resource path="res://addons/godot-openxr/config/OpenXRConfig.gdns" type="Script" id=17]
+[ext_resource path="res://asset_packs/Eyes.material" type="Material" id=18]
+[ext_resource path="res://asset_packs/Bottom.material" type="Material" id=19]
+[ext_resource path="res://materials/environment1.tres" type="Material" id=20]
+[ext_resource path="res://behaviors/CobraTrail.tres" type="Material" id=21]
+[ext_resource path="res://asset_packs/White.material" type="Material" id=22]
+[ext_resource path="res://asset_packs/Stripe.material" type="Material" id=23]
+[ext_resource path="res://Models/alien_trees/Atlas.material" type="Material" id=24]
+[ext_resource path="res://Models/rocks/Atlas.material" type="Material" id=25]
+[ext_resource path="res://asset_packs/Top.material" type="Material" id=26]
+[ext_resource path="res://asset_packs/Main.material" type="Material" id=27]
+[ext_resource path="res://asset_packs/Nails.material" type="Material" id=28]
+[ext_resource path="res://Models/alien_trees/Tree_Floating_1.gltf" type="PackedScene" id=29]
+[ext_resource path="res://Models/alien_trees/Pickup_Sphere.gltf" type="PackedScene" id=30]
+[ext_resource path="res://Models/alien_trees/Tree_Lava_3.gltf" type="PackedScene" id=31]
 [ext_resource path="res://Models/alien_trees/Tree_Light_1.gltf" type="PackedScene" id=32]
-[ext_resource path="res://Models/alien_trees/Pickup_Sphere.gltf" type="PackedScene" id=33]
+[ext_resource path="res://Models/alien_trees/Tree_Blob_3.gltf" type="PackedScene" id=33]
 [ext_resource path="res://Models/alien_trees/Rover_1.gltf" type="PackedScene" id=34]
-[ext_resource path="res://asset_packs/Top.material" type="Material" id=35]
-[ext_resource path="res://behaviors/Avoidance.gd" type="Script" id=36]
-[ext_resource path="res://materials/environment1.tres" type="Material" id=37]
-[ext_resource path="res://behaviors/OffsetPursue.gd" type="Script" id=38]
-[ext_resource path="res://behaviors/Constrain.gd" type="Script" id=39]
-[ext_resource path="res://behaviors/root.gd" type="Script" id=40]
-[ext_resource path="res://behaviors/TrailRender.gd" type="Script" id=41]
-[ext_resource path="res://behaviors/CobraTrail.tres" type="Material" id=42]
-[ext_resource path="res://asset_packs/Nails.material" type="Material" id=43]
-[ext_resource path="res://sounds/bloop_bleep.wav" type="AudioStream" id=44]
-[ext_resource path="res://sounds/psy_yawn.wav" type="AudioStream" id=45]
+[ext_resource path="res://asset_packs/Fish.gltf" type="PackedScene" id=35]
+[ext_resource path="res://asset_packs/Birb.gltf" type="PackedScene" id=36]
+[ext_resource path="res://Models/alien_trees/Tree_Light_2.gltf" type="PackedScene" id=37]
+[ext_resource path="res://Models/alien_trees/Tree_Spikes_2.gltf" type="PackedScene" id=38]
+[ext_resource path="res://Models/alien_trees/Grass_2.gltf" type="PackedScene" id=39]
+[ext_resource path="res://Models/alien_trees/Tree_Blob_2.gltf" type="PackedScene" id=40]
+[ext_resource path="res://asset_packs/Demon.gltf" type="PackedScene" id=41]
+[ext_resource path="res://Models/alien_trees/Tree_Swirl_2.gltf" type="PackedScene" id=42]
+[ext_resource path="res://Models/alien_trees/Tree_Floating_3.gltf" type="PackedScene" id=43]
+[ext_resource path="res://Models/rocks/Rock_Large_3.gltf" type="PackedScene" id=44]
+[ext_resource path="res://Models/alien_trees/Spaceship_BarbaraTheBee.gltf" type="PackedScene" id=45]
+[ext_resource path="res://mic_input.gd" type="Script" id=46]
 
 [sub_resource type="ArrayMesh" id=72]
 resource_name = "Whale_Cylinder"
@@ -55,7 +56,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194883,
 "index_count": 1230,
-"material": ExtResource( 35 ),
+"material": ExtResource( 26 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -1.22982, -1.26606, -2.35657, 2.40004, 2.26606, 4.19521 ), AABB( -1.52589, -1.04278, -0.133551, 3.05177, 2.04278, 2.59492 ), AABB( -1, -1, -2.80605, 2, 2.08125, 3.99439 ), AABB( -0.922107, -0.84845, -3.54432, 1.84421, 1.93957, 3.41077 ), AABB( -1.06245, -0.660987, -6.65818, 2.1249, 1.75211, 4.30778 ), AABB( -1.06245, -0.322758, -6.65818, 2.1249, 0.399745, 1.54001 ), AABB( 0.630795, -1.56438, -0.133551, 1.30003, 1.31353, 1.79271 ), AABB( 1.46344, -1.86048, -0.426719, 0.567844, 0.817705, 1.25601 ), AABB( 1.17022, -2.09412, -0.84653, 0.861064, 0.918918, 0.992832 ), AABB( -1.93083, -1.56438, -0.133551, 1.93083, 1.56438, 1.79271 ), AABB( -2.03129, -1.86048, -0.426719, 0.801469, 0.925095, 1.25601 ), AABB( -2.03129, -2.09412, -0.84653, 0.861074, 0.918918, 0.992832 ), AABB( -0.962334, -0.631944, 1.18834, 1.92468, 1.52334, 2.33818 ) ],
 "vertex_count": 750
@@ -67,7 +68,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194883,
 "index_count": 126,
-"material": ExtResource( 20 ),
+"material": ExtResource( 19 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -0.738422, -0.983648, 0.062839, 1.54565, 1.04457, 1.77581 ), AABB( -0.807225, -0.983648, 0.062839, 1.61445, 1.27368, 2.37659 ), AABB( -0.630795, -0.85522, 0.211329, 1.2616, 1.00136e-05, 9.99868e-06 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.630795, -0.85522, 0.211329, 0.107628, 0.60437, 1.44783 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.738422, -0.983648, 0.062839, 0.738432, 0.732798, 1.59632 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.807225, -0.734274, 1.29277, 1.61445, 1.0243, 2.24333 ) ],
 "vertex_count": 90
@@ -220,7 +221,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 1344,
-"material": ExtResource( 13 ),
+"material": ExtResource( 25 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 602
@@ -238,7 +239,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 4296,
-"material": ExtResource( 21 ),
+"material": ExtResource( 24 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2356
@@ -255,7 +256,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 12240,
-"material": ExtResource( 21 ),
+"material": ExtResource( 24 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 3330
@@ -270,7 +271,7 @@ transform_array = PoolVector3Array( -1.37488, 0, -1.20204, 0, 1.82625, 0, 1.2020
 [sub_resource type="PlaneMesh" id=46]
 
 [sub_resource type="PlaneMesh" id=48]
-material = ExtResource( 37 )
+material = ExtResource( 20 )
 size = Vector2( 25, 25 )
 
 [sub_resource type="ArrayMesh" id=49]
@@ -282,7 +283,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 288,
-"material": ExtResource( 21 ),
+"material": ExtResource( 24 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 208
@@ -303,7 +304,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 666,
-"material": ExtResource( 13 ),
+"material": ExtResource( 25 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 310
@@ -327,7 +328,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 1296,
-"material": ExtResource( 13 ),
+"material": ExtResource( 25 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 609
@@ -353,7 +354,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 5634,
-"material": ExtResource( 26 ),
+"material": ExtResource( 27 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.205762, -0.00404489, -0.0364231, 0.235773, 0.213643, 0.190516 ), AABB( -0.432254, 0.381983, -0.0114049, 0.864509, 0.963385, 0.319675 ), AABB( -0.20581, 0.399241, -0.261396, 0.41162, 0.323716, 0.479542 ), AABB( -0.463246, 0.455245, -0.341317, 0.926491, 0.967636, 0.611157 ), AABB( -0.463246, 0.788757, -0.361338, 0.926491, 1.12605, 0.669609 ), AABB( -0.526532, 1.42288, -0.512718, 1.05306, 0.850729, 0.986368 ), AABB( -0.519143, 1.57648, -0.604493, 1.03829, 1.35258, 1.11817 ), AABB( -0.249795, 0.928838, -0.42494, 0.95431, 1.25262, 0.861156 ), AABB( 0.232684, 1.39972, -0.341505, 0.622299, 0.672447, 0.561227 ), AABB( 0.704515, 1.48894, -0.147818, 0.519536, 0.203157, 0.304606 ), AABB( 0.958343, 1.49793, -0.147818, 0.401251, 0.193355, 0.305675 ), AABB( 1.11328, 1.51548, -0.165421, 0.387907, 0.177456, 0.218142 ), AABB( 1.28191, 1.526, -0.183698, 0.288713, 0.159037, 0.187718 ), AABB( 1.38874, 1.48855, -0.188494, 0.219173, 0.181543, 0.135944 ), AABB( 1.44866, 1.47107, -0.189978, 0.186263, 0.167198, 0.122994 ), AABB( 1.03081, 1.49793, -0.102842, 0.346742, 0.198118, 0.338142 ), AABB( 1.04459, 1.48803, 0.0231578, 0.411877, 0.197958, 0.325136 ), AABB( 1.26673, 1.48803, 0.184653, 0.219429, 0.139406, 0.171677 ), AABB( 1.18173, 1.50921, -0.137207, 0.303654, 0.186844, 0.329435 ), AABB( 1.26613, 1.55023, -0.00734858, 0.302482, 0.14582, 0.195224 ), AABB( 1.37755, 1.5284, 0.0455698, 0.260503, 0.138772, 0.161296 ), AABB( 1.47161, 1.51159, 0.0684715, 0.20865, 0.150664, 0.14093 ), AABB( -0.704515, 0.928838, -0.42494, 0.95431, 1.25262, 0.861156 ), AABB( -0.854983, 1.39972, -0.341505, 0.622299, 0.672447, 0.561227 ), AABB( -1.22405, 1.48894, -0.147818, 0.519536, 0.203157, 0.304606 ), AABB( -1.35959, 1.49793, -0.147818, 0.401251, 0.193355, 0.305675 ), AABB( -1.50119, 1.51548, -0.165421, 0.387907, 0.177456, 0.218142 ), AABB( -1.57062, 1.526, -0.183698, 0.288713, 0.159037, 0.187718 ), AABB( -1.60791, 1.48855, -0.188494, 0.219173, 0.181543, 0.135944 ), AABB( -1.63492, 1.47107, -0.189978, 0.186263, 0.167198, 0.122994 ), AABB( -1.37755, 1.49793, -0.102842, 0.346742, 0.198118, 0.338142 ), AABB( -1.45646, 1.48803, 0.0231578, 0.411877, 0.197958, 0.325136 ), AABB( -1.48616, 1.48803, 0.184653, 0.219429, 0.139406, 0.171677 ), AABB( -1.48538, 1.50921, -0.137207, 0.303654, 0.186844, 0.329435 ), AABB( -1.56861, 1.55023, -0.00734858, 0.302482, 0.14582, 0.195224 ), AABB( -1.63805, 1.5284, 0.0455698, 0.260503, 0.138772, 0.161296 ), AABB( -1.68026, 1.51159, 0.0684715, 0.20865, 0.150664, 0.14093 ), AABB( -0.181222, 0.200933, -0.341317, 0.684804, 1.19878, 0.649587 ), AABB( 0.0479535, -0.00404489, -0.23015, 0.438552, 0.792812, 0.522063 ), AABB( -0.503582, 0.196444, -0.341317, 0.684804, 1.20327, 0.649588 ), AABB( -0.486505, -0.00404489, -0.23015, 0.42346, 0.792812, 0.522063 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.441526, -0.00404489, -0.0498503, 0.235763, 0.213643, 0.203943 ) ],
 "vertex_count": 3830
@@ -365,7 +366,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 702,
-"material": ExtResource( 24 ),
+"material": ExtResource( 23 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.156406, 0.620251, 0.20206, 0.312823, 0.702682, 0.112534 ), AABB( -0.0606764, 0.616597, -0.257609, 0.121363, 0.100054, 0.459669 ), AABB( -0.156406, 0.616597, -0.344737, 0.312823, 0.806284, 0.615023 ), AABB( -0.166326, 0.785608, -0.430527, 0.332652, 1.25432, 0.745121 ), AABB( -0.375551, 1.42288, -0.531295, 0.751101, 0.840384, 0.997841 ), AABB( -0.375551, 1.57648, -0.62285, 0.751101, 1.36683, 1.23435 ), AABB( -0.150366, 1.09114, -0.411983, 0.525916, 0.960773, 0.702634 ), AABB( 0.232684, 1.77266, -0.341505, 0.142867, 0.129417, 0.473168 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.375551, 1.09114, -0.411983, 0.525916, 0.960773, 0.702634 ), AABB( -0.375551, 1.77266, -0.341505, 0.142867, 0.129417, 0.473168 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.1083, 0.616597, -0.344737, 0.233806, 0.615986, 0.659331 ), AABB( 0.0479535, 0.616597, -0.0181166, 0.024295, 0.0733371, 0.308196 ), AABB( -0.125506, 0.616597, -0.344737, 0.21675, 0.615976, 0.659331 ), AABB( -0.0722485, 0.627091, 0.212539, 0.00920275, 0.062853, 0.0775499 ) ],
 "vertex_count": 470
@@ -377,7 +378,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 2880,
-"material": ExtResource( 28 ),
+"material": ExtResource( 18 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.56742, 2.0921, -0.076869, 1.13484, 0.397337, 0.397582 ) ],
 "vertex_count": 1920
@@ -389,7 +390,7 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 108,
-"material": ExtResource( 43 ),
+"material": ExtResource( 28 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 1.58362, 1.5354, -0.188494, 0.0243008, 0.0320915, 0.0930195 ), AABB( 1.58362, 1.48415, -0.189978, 0.0614884, 0.0833389, 0.094504 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 1.40647, 1.50968, 0.348294, 1e-05, 1e-05, 1e-05 ), AABB( 1.40647, 1.50444, 0.299276, 0.0761666, 0.0797987, 0.0675244 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 1.61228, 1.56761, 0.11172, 0.0257741, 0.0403602, 0.0951455 ), AABB( 1.61228, 1.53207, 0.11172, 0.0681351, 0.0759051, 0.0976814 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -1.60791, 1.5354, -0.188494, 0.0242908, 0.0320915, 0.0930195 ), AABB( -1.64511, 1.48415, -0.189978, 0.0614884, 0.0833389, 0.094504 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -1.40647, 1.50968, 0.348294, 1e-05, 1e-05, 1e-05 ), AABB( -1.48264, 1.50444, 0.299276, 0.0761666, 0.0797987, 0.0675244 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -1.63805, 1.56761, 0.11172, 0.0257741, 0.0403602, 0.0951455 ), AABB( -1.68042, 1.53207, 0.11172, 0.0681351, 0.0759051, 0.0976814 ) ],
 "vertex_count": 84
@@ -401,7 +402,7 @@ surfaces/4 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 2016,
-"material": ExtResource( 23 ),
+"material": ExtResource( 22 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.508641, 2.31687, 0.234936, 1.01728, 0.0837152, 0.0630699 ) ],
 "vertex_count": 1344
@@ -5345,7 +5346,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 5676,
-"material": ExtResource( 21 ),
+"material": ExtResource( 24 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1502
@@ -5357,7 +5358,7 @@ data = PoolVector3Array( -0.0085, 1.9676, 0.0559, 0.0212, 2.068, 0.0353, 0.0536,
 [sub_resource type="ConvexPolygonShape" id=75]
 
 [sub_resource type="PlaneMesh" id=55]
-material = ExtResource( 37 )
+material = ExtResource( 20 )
 size = Vector2( 25, 25 )
 
 [sub_resource type="ArrayMesh" id=56]
@@ -5369,7 +5370,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 3240,
-"material": ExtResource( 21 ),
+"material": ExtResource( 24 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 854
@@ -5382,32 +5383,33 @@ mesh = SubResource( 56 )
 transform_array = PoolVector3Array( -1.67218, 0, -0.693208, 0, 1.81017, 0, 0.693208, 0, -1.67218, -9.17292, 0, -9.47099, -0.6973, 0, -0.0525835, 0, 0.69928, 0, 0.0525835, 0, -0.6973, -0.49846, 0, -2.54947, -1.0172, 0, -0.205955, 0, 1.03784, 0, 0.205955, 0, -1.0172, 3.8292, 0, 4.19872, -0.98107, 0, -0.558049, 0, 1.12868, 0, 0.558049, 0, -0.98107, 3.11626, 0, 11.3373, -0.0550292, 0, -1.64949, 0, 1.65041, 0, 1.64949, 0, -0.0550292, -11.1588, 0, -7.79413, 1.12105, 0, -1.3722, 0, 1.77192, 0, 1.3722, 0, 1.12105, 11.4599, 0, 7.63036, -0.834789, 0, -1.80308, 0, 1.98695, 0, 1.80308, 0, -0.834789, -9.33556, 0, -10.0022, -0.819995, 0, -2.15339, 0, 2.30423, 0, 2.15339, 0, -0.819995, -6.51498, 0, 1.64571, -0.532285, 0, 1.23793, 0, 1.34752, 0, -1.23793, 0, -0.532285, -12.0061, 0, -8.27296, -0.715129, 0, 1.30592, 0, 1.4889, 0, -1.30592, 0, -0.715129, -1.07087, 0, -10.2139, -0.95787, 0, 0.305767, 0, 1.00549, 0, -0.305767, 0, -0.95787, -9.98196, 0, 0.504854, 0.88897, 0, -1.30484, 0, 1.57889, 0, 1.30484, 0, 0.88897, 7.8337, 0, -5.59171, -2.04411, 0, 1.08438, 0, 2.31393, 0, -1.08438, 0, -2.04411, 0.011415, 0, -11.7257, -0.652243, 0, 1.5241, 0, 1.6578, 0, -1.5241, 0, -0.652243, -6.00328, 0, -7.75166, -0.91109, 0, -0.326961, 0, 0.967982, 0, 0.326961, 0, -0.91109, -8.73792, 0, 4.28415, -0.781252, 0, -0.512572, 0, 0.934389, 0, 0.512572, 0, -0.781252, -5.38977, 0, 5.26488, -0.666016, 0, 0.162714, 0, 0.685604, 0, -0.162714, 0, -0.666016, 0.289758, 0, -10.1543, 0.797123, 0, -0.397051, 0, 0.890536, 0, 0.397051, 0, 0.797123, 2.1405, 0, -0.468323, 0.121379, 0, -2.39995, 0, 2.40302, 0, 2.39995, 0, 0.121379, 3.14379, 0, -7.77587, -1.78007, 0, -1.73497, 0, 2.48571, 0, 1.73497, 0, -1.78007, -9.56997, 0, -10.2584 )
 
 [node name="Spatial" type="Spatial"]
-script = ExtResource( 40 )
+script = ExtResource( 11 )
 
 [node name="Whale" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.7667, 4.40658 )
-script = ExtResource( 1 )
+script = ExtResource( 15 )
 max_speed = 3.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Whale"]
 transform = Transform( 0.999254, 0, 0.0386145, 0, 1, 0, -0.0386145, 0, 0.999254, 0, 0, 0 )
-stream = ExtResource( 44 )
+stream = ExtResource( 2 )
 autoplay = true
+bus = "Creature Bus"
 
 [node name="Avoidance" type="Node" parent="Whale"]
-script = ExtResource( 36 )
+script = ExtResource( 16 )
 weight = 5.0
 
 [node name="Constrain" type="Node" parent="Whale"]
-script = ExtResource( 39 )
+script = ExtResource( 5 )
 center_path = NodePath("../../Environment")
 
 [node name="NoiseWander" type="Node" parent="Whale"]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="Whale" type="Spatial" parent="Whale"]
 transform = Transform( 0.999254, 0, 0.0386145, 0, 1, 0, -0.0386145, 0, 0.999254, 0, 0, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 14 )
 
 [node name="Armature" type="Spatial" parent="Whale/Whale"]
 
@@ -5509,13 +5511,13 @@ mesh = SubResource( 62 )
 [node name="CollisionShape" type="CollisionShape" parent="Environment/GeodesicDome/GeodesicDome/StaticBody"]
 shape = SubResource( 63 )
 
-[node name="Tree_Blob_2" parent="Environment" instance=ExtResource( 16 )]
+[node name="Tree_Blob_2" parent="Environment" instance=ExtResource( 40 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9473, 0, -20.4501 )
 
-[node name="Tree_Blob_3" parent="Environment" instance=ExtResource( 18 )]
+[node name="Tree_Blob_3" parent="Environment" instance=ExtResource( 33 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4387, 9.53674e-07, -25.6768 )
 
-[node name="Tree_Floating_1" parent="Environment" instance=ExtResource( 19 )]
+[node name="Tree_Floating_1" parent="Environment" instance=ExtResource( 29 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3298, 0.316288, -23.2114 )
 
 [node name="MultiMeshInstance" type="MultiMeshInstance" parent="Environment"]
@@ -5526,11 +5528,11 @@ multimesh = SubResource( 58 )
 transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0 )
 mesh = SubResource( 46 )
 skeleton = NodePath("../../..")
-material/0 = ExtResource( 37 )
+material/0 = ExtResource( 20 )
 
-[node name="Tree_Floating_3" parent="Environment/MultiMeshInstance" instance=ExtResource( 15 )]
+[node name="Tree_Floating_3" parent="Environment/MultiMeshInstance" instance=ExtResource( 43 )]
 
-[node name="Rock_Large_3" parent="Environment" instance=ExtResource( 22 )]
+[node name="Rock_Large_3" parent="Environment" instance=ExtResource( 44 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, -36.3372, -0.298944, -6.01647 )
 
 [node name="GrassPlane" type="MeshInstance" parent="Environment"]
@@ -5542,7 +5544,7 @@ skeleton = NodePath("../..")
 transform = Transform( 1, -1.41882e-11, 4.93038e-32, 6.45316e-12, 1, 2.13163e-14, -1.57772e-30, 5.68434e-14, 1, 28.3773, 0.479347, 14.1819 )
 multimesh = SubResource( 59 )
 
-[node name="Grass_2" parent="Environment/GrassPlane" instance=ExtResource( 11 )]
+[node name="Grass_2" parent="Environment/GrassPlane" instance=ExtResource( 39 )]
 transform = Transform( 1, 1.41882e-11, -6.04881e-25, -6.45331e-12, 1, -4.26326e-14, 1.05463e-24, -1.63425e-13, 1, 77.7516, -34.1648, 12.9942 )
 
 [node name="Rocks" type="Spatial" parent="Environment"]
@@ -5620,19 +5622,19 @@ shape = SubResource( 71 )
 transform = Transform( 500, 0, 0, 0, 1, 0, 0, 0, 500, 0, 0, 0 )
 shape = SubResource( 17 )
 
-[node name="Fish" parent="." instance=ExtResource( 5 )]
+[node name="Fish" parent="." instance=ExtResource( 35 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.309, 0, -12.951 )
 
-[node name="Demon" parent="." instance=ExtResource( 3 )]
+[node name="Demon" parent="." instance=ExtResource( 41 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.186, 0, -12.951 )
 
-[node name="Pickup_Sphere" parent="Demon" instance=ExtResource( 33 )]
+[node name="Pickup_Sphere" parent="Demon" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3785, 47.1568, 22.8734 )
 
 [node name="Rover_1" parent="Demon" instance=ExtResource( 34 )]
 transform = Transform( -0.76911, 0, -0.639117, 0, 1, 0, 0.639117, 0, -0.76911, -57.828, 0.1, 25.436 )
 
-[node name="Birb" parent="." instance=ExtResource( 7 )]
+[node name="Birb" parent="." instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.568, 0, -12.951 )
 
 [node name="Alien" type="Spatial" parent="."]
@@ -5895,109 +5897,111 @@ light_energy = 3.074
 
 [node name="Ship" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9199, 8.13896, -12.9506 )
-script = ExtResource( 1 )
+script = ExtResource( 15 )
 max_speed = 4.0
 
 [node name="Avoidance" type="Node" parent="Ship"]
-script = ExtResource( 36 )
+script = ExtResource( 16 )
 weight = 5.0
 
 [node name="Constrain" type="Node" parent="Ship"]
-script = ExtResource( 39 )
+script = ExtResource( 5 )
 radius = 50.0
 center_path = NodePath("../../Environment/Tree_Blob_2")
 
 [node name="NoiseWander" type="Node" parent="Ship"]
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
-[node name="Spaceship_BarbaraTheBee" parent="Ship" instance=ExtResource( 8 )]
+[node name="Spaceship_BarbaraTheBee" parent="Ship" instance=ExtResource( 45 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="Ship"]
 mesh = SubResource( 44 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ship"]
-stream = ExtResource( 45 )
+stream = ExtResource( 3 )
 autoplay = true
+bus = "Creature Bus"
 
 [node name="TrailRenderer" type="Spatial" parent="Ship"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14037, -1.61691, -2.02757 )
-script = ExtResource( 41 )
+script = ExtResource( 9 )
 width = 0.2
-width_curve = ExtResource( 17 )
-material = ExtResource( 42 )
+width_curve = ExtResource( 4 )
+material = ExtResource( 21 )
 
 [node name="TrailRenderer2" type="Spatial" parent="Ship"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23601, -1.61691, -2.02757 )
-script = ExtResource( 41 )
+script = ExtResource( 9 )
 width = 0.2
-width_curve = ExtResource( 17 )
-material = ExtResource( 42 )
+width_curve = ExtResource( 4 )
+material = ExtResource( 21 )
 
 [node name="TrailRenderer3" type="Spatial" parent="Ship"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14037, 1.25395, -1.77611 )
-script = ExtResource( 41 )
+script = ExtResource( 9 )
 width = 0.2
-width_curve = ExtResource( 17 )
-material = ExtResource( 42 )
+width_curve = ExtResource( 4 )
+material = ExtResource( 21 )
 
 [node name="TrailRenderer4" type="Spatial" parent="Ship"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23601, 1.19108, -1.83898 )
-script = ExtResource( 41 )
+script = ExtResource( 9 )
 width = 0.2
-width_curve = ExtResource( 17 )
-material = ExtResource( 42 )
+width_curve = ExtResource( 4 )
+material = ExtResource( 21 )
 
-[node name="Player" type="KinematicBody" parent="Ship"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4749, 1.86104, 12.9506 )
-script = ExtResource( 25 )
+[node name="Player" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55497, 10, 0 )
+script = ExtResource( 12 )
 speed = 10.0
 
-[node name="Recorder" type="AudioStreamPlayer3D" parent="Ship/Player"]
-bus = "Record"
-
-[node name="FPController" type="ARVROrigin" parent="Ship/Player"]
+[node name="FPController" type="ARVROrigin" parent="Player"]
 script = ExtResource( 6 )
 
-[node name="Configuration" type="Node" parent="Ship/Player/FPController"]
-script = ExtResource( 2 )
+[node name="Configuration" type="Node" parent="Player/FPController"]
+script = ExtResource( 17 )
 color_space = 0
 refresh_rate = 0.0
 
-[node name="ARVRCamera" type="ARVRCamera" parent="Ship/Player/FPController"]
+[node name="ARVRCamera" type="ARVRCamera" parent="Player/FPController"]
 cull_mask = 524287
-environment = ExtResource( 14 )
+environment = ExtResource( 1 )
 fov = 65.0
 near = 0.1
 far = 1000.0
 
-[node name="Listener" type="Listener" parent="Ship/Player/FPController/ARVRCamera"]
+[node name="Listener" type="Listener" parent="Player/FPController/ARVRCamera"]
 
-[node name="LeftHandController" type="ARVRController" parent="Ship/Player/FPController"]
+[node name="LeftHandController" type="ARVRController" parent="Player/FPController"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5 )
+script = ExtResource( 7 )
+
+[node name="TrailRenderer" type="Spatial" parent="Player/FPController/LeftHandController"]
 script = ExtResource( 9 )
-
-[node name="TrailRenderer" type="Spatial" parent="Ship/Player/FPController/LeftHandController"]
-script = ExtResource( 41 )
 width = 0.2
-width_curve = ExtResource( 17 )
-material = ExtResource( 42 )
+width_curve = ExtResource( 4 )
+material = ExtResource( 21 )
 
-[node name="RightHandController" type="ARVRController" parent="Ship/Player/FPController"]
+[node name="RightHandController" type="ARVRController" parent="Player/FPController"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5 )
 controller_id = 2
-script = ExtResource( 9 )
+script = ExtResource( 7 )
 
-[node name="TrailRenderer" type="Spatial" parent="Ship/Player/FPController/RightHandController"]
-script = ExtResource( 41 )
+[node name="TrailRenderer" type="Spatial" parent="Player/FPController/RightHandController"]
+script = ExtResource( 9 )
 width = 0.2
-width_curve = ExtResource( 17 )
-material = ExtResource( 42 )
+width_curve = ExtResource( 4 )
+material = ExtResource( 21 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+autoplay = true
+script = ExtResource( 46 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, -0.00034721, 0.00052367, 0.000347209, 1, 8.29928e-08, -0.00052367, 8.26703e-08, 1, -2.318, 0, 3.227 )
 mesh = SubResource( 26 )
 skeleton = NodePath("")
-material/0 = ExtResource( 37 )
+material/0 = ExtResource( 20 )
 
 [node name="Tree_Blob_3" type="Spatial" parent="MeshInstance"]
 transform = Transform( 9.01569, 0.00381209, 17.8527, 0.00381533, 20, -0.00619769, -17.8527, 0.00619971, 9.01569, -0.309497, 0.0629639, 9.85763 )
@@ -6017,19 +6021,19 @@ shape = SubResource( 75 )
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Tree_Blob_3"]
 
-[node name="Tree_Lava_3" parent="MeshInstance" instance=ExtResource( 29 )]
+[node name="Tree_Lava_3" parent="MeshInstance" instance=ExtResource( 31 )]
 transform = Transform( 2, -2.83763e-11, 0, 1.29066e-11, 2, -2.84217e-14, 0, 2.70006e-13, 2, -11.6513, 0.0669022, 10.6991 )
 
-[node name="Tree_Light_2" parent="MeshInstance" instance=ExtResource( 27 )]
+[node name="Tree_Light_2" parent="MeshInstance" instance=ExtResource( 37 )]
 transform = Transform( 2, -2.83764e-11, 0, 1.29066e-11, 2, -2.84217e-14, 0, 3.55271e-13, 2, -20.1607, 0.0698557, 17.2531 )
 
 [node name="Tree_Light_1" parent="MeshInstance" instance=ExtResource( 32 )]
 transform = Transform( 2, -2.83763e-11, 0, 1.29066e-11, 2, -2.84217e-14, 0, 1.84741e-13, 2, -4.04562, 0.0642612, 1.45952 )
 
-[node name="Tree_Spikes_2" parent="MeshInstance" instance=ExtResource( 31 )]
+[node name="Tree_Spikes_2" parent="MeshInstance" instance=ExtResource( 38 )]
 transform = Transform( 2, -2.83764e-11, 0, 1.29066e-11, 2, -2.84217e-14, 0, 4.40536e-13, 2, -36.3528, 0.0754778, 11.0667 )
 
-[node name="Tree_Swirl_2" parent="MeshInstance" instance=ExtResource( 30 )]
+[node name="Tree_Swirl_2" parent="MeshInstance" instance=ExtResource( 42 )]
 transform = Transform( 2, -2.83763e-11, 0, 1.29066e-11, 2, -2.84217e-14, 0, 1.84741e-13, 2, -10.176, 0.0663894, -0.252681 )
 
 [node name="ball_tree_palne" type="MeshInstance" parent="."]
@@ -6039,28 +6043,25 @@ mesh = SubResource( 55 )
 [node name="MultiMeshInstance" type="MultiMeshInstance" parent="ball_tree_palne"]
 multimesh = SubResource( 57 )
 
-[node name="Tree_Light_2" parent="ball_tree_palne" instance=ExtResource( 27 )]
+[node name="Tree_Light_2" parent="ball_tree_palne" instance=ExtResource( 37 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 
 [node name="camera follower" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973738, -15.0557, 41.7624 )
-script = ExtResource( 1 )
+script = ExtResource( 15 )
 max_force = 30
 draw_gizmos = false
 
 [node name="OffsetPursue" type="Node" parent="camera follower"]
-script = ExtResource( 38 )
+script = ExtResource( 8 )
 weight = 5.0
 leader_node_path = NodePath("../../Ship")
 
 [node name="Avoidance" type="Node" parent="camera follower"]
-script = ExtResource( 36 )
+script = ExtResource( 16 )
 draw_gizmos = false
 
-[node name="Button" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "Start"
+[node name="user_interface" type="Node" parent="."]
 
 [editable path="Environment/MultiMeshInstance/Tree_Floating_3"]
 [editable path="Environment/GrassPlane/Grass_2"]
