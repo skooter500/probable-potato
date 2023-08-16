@@ -29,7 +29,7 @@ func update_amplitude():
 	sample = db2linear(AudioServer.get_bus_peak_volume_left_db(record_bus_index, 0))
 	volume_samples.push_front(sample)
 
-	print("Sample: " + str(sample))
+	# print("Sample: " + str(sample))
 	# Use a while loop that way the user can adjust the number of samples at runtime
 	# and remove as many as needed when the value changes
 	while volume_samples.size() > MAX_SAMPLES:
@@ -45,10 +45,20 @@ func _process(delta):
 
 func _ready() -> void:
 	
+	print("Devices:")
+	var devices = AudioServer.capture_get_device_list()
+	for i in range(devices.size()):
+		var device = devices[i]
+		print(device)
+	
+	print("Capture device: " + str(AudioServer.capture_get_device()))
+	
 	record_bus_index = AudioServer.get_bus_index('Record')
 	# Only one effect on the bus, so can just assume index 0 for record effect
 	record_effect = AudioServer.get_bus_effect(record_bus_index, 0)
 	start_recording()
+	
+	
 	
 func start_recording() -> void:
 	record_effect.set_recording_active(true)

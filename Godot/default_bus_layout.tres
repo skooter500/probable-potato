@@ -1,4 +1,28 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=2]
+[gd_resource type="AudioBusLayout" load_steps=10 format=2]
+
+[sub_resource type="AudioEffectDistortion" id=4]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectAmplify" id=5]
+resource_name = "Amplify"
+volume_db = 19.81
+
+[sub_resource type="AudioEffectChorus" id=6]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectPitchShift" id=7]
+resource_name = "PitchShift"
+pitch_scale = 0.81
+
+[sub_resource type="AudioEffectReverb" id=8]
+resource_name = "Reverb"
+damping = 0.88
+
+[sub_resource type="AudioEffectRecord" id=9]
+resource_name = "Record"
+
+[sub_resource type="AudioEffectBandPassFilter" id=10]
+resource_name = "BandPassFilter"
 
 [sub_resource type="AudioEffectRecord" id=2]
 resource_name = "Record"
@@ -8,6 +32,20 @@ resource_name = "SpectrumAnalyzer"
 
 [resource]
 bus/0/volume_db = 1.06049
+bus/0/effect/0/effect = SubResource( 4 )
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource( 5 )
+bus/0/effect/1/enabled = true
+bus/0/effect/2/effect = SubResource( 6 )
+bus/0/effect/2/enabled = true
+bus/0/effect/3/effect = SubResource( 7 )
+bus/0/effect/3/enabled = true
+bus/0/effect/4/effect = SubResource( 8 )
+bus/0/effect/4/enabled = false
+bus/0/effect/5/effect = SubResource( 9 )
+bus/0/effect/5/enabled = false
+bus/0/effect/6/effect = SubResource( 10 )
+bus/0/effect/6/enabled = true
 bus/1/name = "RecordOutput"
 bus/1/solo = false
 bus/1/mute = false
@@ -26,7 +64,7 @@ bus/2/effect/1/effect = SubResource( 3 )
 bus/2/effect/1/enabled = true
 bus/3/name = "Creature"
 bus/3/solo = false
-bus/3/mute = true
+bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
 bus/3/send = "Master"
